@@ -1,103 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="et">
 <head>
-<title>Roosa Manna</title>
-<style>
-body {
-  background-color: rgb(255, 211, 235);
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roosa Manna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            background-color: rgb(255, 211, 235);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+        }
 
-</style>
+        h1 {
+            color: rgb(255, 106, 255);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            border: 2px solid Violet;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .box {
+            padding: 15px;
+            margin: 25px 0;
+            border: 1px solid lightgray;
+            outline-width: 3px;
+            border-radius: 8px;
+            background-color: rgb(255, 163, 235);
+            transition: all 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .solid {
+            color: rgb(255, 106, 255);
+            text-align: center;
+            font-weight: bold;
+            outline-style: solid;
+            outline-color: rgb(255, 106, 255);
+        }
+
+        .dashed {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-weight: bold;
+            outline-style: dashed;
+            outline-color: Violet;
+            outline-offset: 5px;
+        }
+
+        .offset {
+            color: rgb(100, 50, 150);
+            text-align: center;
+            font-weight: bold;
+            outline-style: solid;
+            outline-color: rgb(100, 50, 150);
+            outline-offset: 8px;
+        }
+
+        .serif {
+            font-family: "Times New Roman", Times, serif;
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .mono {
+            font-family: "Courier New", Courier, monospace;
+            margin: 15px 0;
+            font-size: 1rem;
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .fa {
+            font-size: 36px;
+            color: #ff4bff;
+            margin: 0 10px;
+        }
+
+        .icon-line {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>🌸 Roosa Manna 🌸</h1>
+        
+        <section>
+            <p style="text-align: center; font-size: 1.2rem; color: rgb(100, 50, 150);">Sooviksin koju minna.</p>
+            
+            <h2>Tere, olen Ceily ja sooviksin koju minna</h2>
+            
+            <p>Mina sooviksin väga koju.</p>
+        </section>
 
+        <section>
+            <h2 style="border: none; background: none; padding: 0;">Prioriteedid</h2>
+            
+            <div class="box solid">ESIMENE prioriteet on minna koju:)</div>
+            <div class="box dashed">TEINE prioriteet on minna koju ja magada:)</div>
+            <div class="box offset">KOLMAS prioriteet on minna sirkasse:)</div>
+        </section>
 
-<h1 style="color:rgb(255, 106, 255);text-align:center;">Roosa manna</h1>
-<p1 style="color:rgb(0, 0, 0);">Sooviksin koju minna.</p1>
+        <section>
+            <h2 style="border: none; background: none; padding: 0;">Erinevad fondid</h2>
+            
+            <p class="serif">Ceily soovib koju.</p>
+            <p style="font-weight: bold;">SOOVIB IKKA VEEL KOJU.</p>
+            <p class="mono">NO PALUN VIIGE MIND KOJU.</p>
+        </section>
 
+        <section>
+            <h2 style="border: none; background: none; padding: 0;">Ikonid</h2>
+            
+            <div class="icon-line">
+                <span>Pilv mille peale ma lennata tahan:</span>
+                <i class="fa fa-cloud"></i>
+            </div>
+            <div class="icon-line">
+                <span>Südamille sa murrad, kui mind koju ei saada:</span>
+                <i class="fa fa-heart"></i>
+            </div>
+        </section>
+    </div>
 
-<h2 style="border:2px solid Violet;">Tere, olen Ceily ja sooviksin koju minna</h2>
-
-<html>
-<head>
-<style>
-div {
-  background-color: rgb(255, 163, 235);
-  /* width */
-  /* padding (iside) */
-  /* border */
-  /* margin (outside) */
-}
-</style>
-</head>
-<body>
-
-<p>Mina sooviksin väga koju.</p>
-<div>Juhhuuuu.</div>
-
-<html>
-<head>
-<style>
-.box {
-  padding: 15px;
-  margin: 25px;
-  border: 1px solid lightgray;
-  outline-width: 3px;
-}
-
-.solid {
-  "color:rgb(255, 106, 255);text-align:center;"
-}
-
-.dashed {
-  /* outline shorthand */
-}
-
-/* add .offset rule: outline + outline-offset */
-</style>
-</head>
-<body>
-
-<div class="box solid">ESIMENE prioriteet on minna koju:)</div>
-<div class="box dashed">TEINE prioriteet on minna koju ja magada:)</div>
-<div class="box offset">KOLMAS prioriteet on minna sirkasse:)</div>
-<html>
-<head>
-<style>
-.serif {
-  font-family: "Times New Roman", Times, serif;
-}
-
-.sans {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.mono {
-  font-family: "Courier New", Courier, monospace;
-}
-</style>
-</head>
-<body>
-
-<p class="serif">Ceily soovib koju.</p>
-<p class="sans">SOOVIB IKKA VEEL KOJU.</p>
-<p class="mono">NO PALUN VIIGE MIND KOJU.</p>
-
-<html>
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.fa {
-  font-size: 36px;
-  color: #ff4bff;
-}
-</style>
-</head>
-<body>
-
-<p>Pilv mille peale ma lennata tahan: <i class="fa fa-cloud"></i></p>
-<p>Südamille sa murrad, kui mind koju ei saada: <i class="fa fa-heart"></i></p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
 <html>
 <head>

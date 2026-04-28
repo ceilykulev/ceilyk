@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fastasfcar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --page-bg: rgba(253, 191, 225, 0.671);
+            --surface: rgba(255, 240, 250, 0.95);
+            --surface-strong: #ffdef0;
+            --accent: #faa0fa;
+            --accent-soft: #ffb3e7;
+            --text: #4a003c;
+            --text-light: #ffffff;
+            --shadow-pink: rgba(255, 75, 255, 0.18);
+        }
+
+        /* Sujuv kerimine */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #380035;
+        }
+
+        .hero-section {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.616), rgba(148, 145, 148, 0.25)), 
+                        url('img/auto1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.12);
+            mix-blend-mode: soft-light;
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar {
+            background-color: rgba(252, 182, 252, 0.95);
+            box-shadow: 0 2px 20px var(--shadow-pink);
+        }
+
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffe6ff !important;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline-light {
+            color: var(--text-light);
+            border-color: var(--accent);
+            background-color: rgba(255, 75, 255, 0.18);
+        }
+
+        .btn-outline-light:hover,
+        .btn-outline-light:focus {
+            background-color: var(--accent);
+            color: var(--text-light);
+            border-color: var(--accent);
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--surface);
+            box-shadow: 0 20px 40px var(--shadow-pink);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(255, 75, 255, 0.28);
+            color: inherit;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 20px 0;
+        }
+
+        section {
+            background-color: rgba(255, 240, 250, 0.92);
+            border-radius: 24px;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+
+        .bg-light {
+            background-color: rgba(255, 237, 246, 0.98) !important;
+        }
+
+        .text-muted {
+            color: #8a3576 !important;
+        }
+
+        .display-2,
+        .display-5 {
+            color: #380035;
+        }
+
+        .lead {
+            color: #5a0a5a;
+        }
+
+        .btn-danger {
+            background-color: #ff4bff;
+            border-color: #ff4bff;
+            color: #fff;
+        }
+
+        .btn-danger:hover,
+        .btn-danger:focus {
+            background-color: #d41bcf;
+            border-color: #d41bcf;
+        }
+
+        footer {
+            background-color: #ffb3e2;
+            color: #5e1847;
+            padding: 50px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#">DK</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#tekke-lugu">Tekkelugu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mou">Mõju</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kaotamine">Kaotamine</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tanapeav">Tänapäev</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <h1 class="display-2 fw-bold">Tõde, Mäletamine ja Vastupanu</h1>
+                    <p class="lead">Mõistes orjuse ajalugu, loome õiglasemat tulevikku.</p>
+                    <a href="#tekke-lugu" class="btn btn-outline-light btn-lg px-5 mt-4 rounded-0">Alusta õppimist</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="tekke-lugu" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-5">Transatlantiline kaubandus</h2>
+                    <div class="accent-line"></div>
+                    <p class="text-muted">16. ja 19. sajandi vahel transporditi üle Atlandi ookeani sunniviisiliselt rohkem kui 12 miljonit aafriklast.</p>
+                    <p>See ränk periood ei olnud lihtsalt kaubandus, vaid süsteemne inimõiguste eitamine, mis pani aluse tänapäeva globaalsele majandusele, kuid jättis sügavad armid põlvkondadeks.</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=800" class="img-fluid shadow" alt="Ajalooline kontekst">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mou" class="bg-light py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2>Ajaloo dimensioonid</h2>
+                <p class="text-muted">Vali valdkond, et lugeda täpsemalt süsteemi mõjudest.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 feature-card p-4">
+                        <div>
+                            <h3>Majanduslik pärand</h3>
+                            <p class="text-muted small">Uuri, kuidas puuvilla-, suhkru- ja tubakaistandused rikastasid Euroopat ja Ameerikat.</p>
+                        </div>
+                        <a href="https://et.wikipedia.org/wiki/Orjus" target="_blank" class="btn btn-sm btn-outline-dark mt-3 rounded-0">Loe lähemalt</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 feature-card p-4">
+                        <div>
+                            <h3>Vastupanuaktid</h3>
+                            <p class="text-muted small">Loe kangelastest, kes riskisid kõigele, et saavutada vabadus endale ja teistele.</p>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-dark mt-3 rounded-0">Loe lähemalt</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 feature-card p-4">
+                        <div>
+                            <h3>Kultuuriline säilimine</h3>
+                            <p class="text-muted small">Kuidas muusika, toit ja traditsioonid elasid üle kõige pimedamad ajad.</p>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-dark mt-3 rounded-0">Loe lähemalt</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kaotamine" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="display-5">Pikk tee vabaduseni</h2>
+                    <div class="accent-line mx-auto"></div>
+                    <div class="col-md-8 mx-auto">
+                        <p class="lead">Orjuse kaotamine ei toimunud üleöö. See oli veriste mässude, poliitiliste debattide ja väsimatu selgitustöö tulemus.</p>
+                        <p>Alates 1807. aasta orjakaubanduse keelustamisest Briti impeeriumis kuni 13. paranduseni USA põhiseaduses – iga samm oli võitlus inimväärikuse eest.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tanapeav" class="py-5 text-white" style="background-color: #2c3e50;">
+        <div class="container py-5 text-center">
+            <h2 class="mb-4">Tänapäeva väljakutsed</h2>
+            <p class="mb-4 fs-5">Hinnanguliselt elab täna kaasaegses orjuses (inimkaubandus, sunnitöö) üle 40 miljoni inimese.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://www.antislavery.org" target="_blank" class="btn btn-danger btn-lg rounded-0 px-5">Toeta võitlust</a>
+                <a href="#navbarNav" class="btn btn-outline-light btn-lg rounded-0 px-5">Tagasi üles</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <h5 class="text-white mb-3">AJALOO ARHIIV</h5>
+            <p>© 2026 Hariduslik Ressurss. Dokumenteerides ajalugu, kaitstes tulevikku.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
