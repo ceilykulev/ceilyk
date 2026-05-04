@@ -1,0 +1,63 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+nav {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.hero {
+  padding: 5rem 0;
+}
+
+.hero-headline {
+  line-height: 1.05;
+}
+
+.hero-image {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.12);
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.pricing-card {
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+.feature-card {
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.feature-card .accordion-button:not(.collapsed) {
+  color: #1f2937;
+  background-color: #ecfdf5;
+}
+
+.footer-cta {
+  background: linear-gradient(135deg, #0f766e 0%, #10b981 100%);
+  color: #ffffff;
+}
+
+.footer-cta a {
+  color: #ffffff;
+}
+
+.text-secondary {
+  color: #0f766e !important;
+}

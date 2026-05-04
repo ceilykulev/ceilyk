@@ -3,281 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fastasfcar</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Lotte ja kuukivi saladused</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
         :root {
-            --page-bg: rgba(253, 191, 225, 0.671);
-            --surface: rgba(255, 240, 250, 0.95);
-            --surface-strong: #ffdef0;
-            --accent: #faa0fa;
-            --accent-soft: #ffb3e7;
-            --text: #4a003c;
-            --text-light: #ffffff;
-            --shadow-pink: rgba(255, 75, 255, 0.18);
+            --accent: #ff69b4;
         }
 
-        /* Sujuv kerimine */
-        html {
-            scroll-behavior: smooth;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #fff5f8;
         }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--page-bg);
-            color: var(--text);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            color: #380035;
-        }
-
-        .hero-section {
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.616), rgba(148, 145, 148, 0.25)), 
-                        url('img/auto1.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            color: var(--text-light);
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(255, 255, 255, 0.12);
-            mix-blend-mode: soft-light;
-        }
-
-        .hero-section .container {
-            position: relative;
-            z-index: 1;
+        h1, h2, h3, h4, h5 { 
+            font-family: 'Playfair Display', serif; 
         }
 
         .navbar {
-            background-color: rgba(252, 182, 252, 0.95);
-            box-shadow: 0 2px 20px var(--shadow-pink);
+            background-color: rgba(255,255,255,0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #ffb6d9;
         }
 
-        .nav-link {
-            color: var(--text-light) !important;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #ffe6ff !important;
-            transform: translateY(-1px);
-        }
-
-        .btn-outline-light {
-            color: var(--text-light);
-            border-color: var(--accent);
-            background-color: rgba(255, 75, 255, 0.18);
-        }
-
-        .btn-outline-light:hover,
-        .btn-outline-light:focus {
-            background-color: var(--accent);
-            color: var(--text-light);
-            border-color: var(--accent);
-        }
-
-        .feature-card {
-            border: none;
-            border-radius: 24px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: var(--surface);
-            box-shadow: 0 20px 40px var(--shadow-pink);
-            text-decoration: none;
-            color: inherit;
+        .hero {
+            min-height: 90vh;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            padding-top: 80px;
         }
 
-        .feature-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 50px rgba(255, 75, 255, 0.28);
-            color: inherit;
+        .book-cover {
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            border-radius: 12px;
+            max-width: 100%;
         }
 
         .accent-line {
-            width: 60px;
             height: 4px;
-            background-color: var(--accent);
+            width: 70px;
+            background: var(--accent);
             margin: 20px 0;
         }
 
-        section {
-            background-color: rgba(255, 240, 250, 0.92);
-            border-radius: 24px;
-            padding: 40px 0;
-            margin-bottom: 30px;
+        .pricing-card {
+            border: none;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        .pricing-card.popular {
+            border: 3px solid #ff69b4;
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255,105,180,0.2);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff69b4;
+            color: white;
+            padding: 6px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
-        .bg-light {
-            background-color: rgba(255, 237, 246, 0.98) !important;
-        }
-
-        .text-muted {
-            color: #8a3576 !important;
-        }
-
-        .display-2,
-        .display-5 {
-            color: #380035;
-        }
-
-        .lead {
-            color: #5a0a5a;
-        }
-
-        .btn-danger {
-            background-color: #ff4bff;
-            border-color: #ff4bff;
-            color: #fff;
-        }
-
-        .btn-danger:hover,
-        .btn-danger:focus {
-            background-color: #d41bcf;
-            border-color: #d41bcf;
-        }
-
-        footer {
-            background-color: #ffb3e2;
-            color: #5e1847;
-            padding: 50px 0;
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand text-white fw-bold" href="#">DK</a>
-            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand fw-bold fs-4 text-dark" href="#">Lotte ja kuukivi saladused</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#tekke-lugu">Tekkelugu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#mou">Mõju</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kaotamine">Kaotamine</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tanapeav">Tänapäev</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#sisu">Raamat</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#arvamused">Arvamused</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#paketid">Hind</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section">
+    <! -->
+    <section class="hero">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <h1 class="display-2 fw-bold">Tõde, Mäletamine ja Vastupanu</h1>
-                    <p class="lead">Mõistes orjuse ajalugu, loome õiglasemat tulevikku.</p>
-                    <a href="#tekke-lugu" class="btn btn-outline-light btn-lg px-5 mt-4 rounded-0">Alusta õppimist</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="tekke-lugu" class="py-5">
-        <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h2 class="display-5">Transatlantiline kaubandus</h2>
+                    <h1 class="display-1 fw-bold text-dark">Lotte ja kuukivi saladused</h1>
+                    <h2 class="display-5 text-muted mb-4">Janno Põldma</h2>
+                    
+
                     <div class="accent-line"></div>
-                    <p class="text-muted">16. ja 19. sajandi vahel transporditi üle Atlandi ookeani sunniviisiliselt rohkem kui 12 miljonit aafriklast.</p>
-                    <p>See ränk periood ei olnud lihtsalt kaubandus, vaid süsteemne inimõiguste eitamine, mis pani aluse tänapäeva globaalsele majandusele, kuid jättis sügavad armid põlvkondadeks.</p>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=800" class="img-fluid shadow" alt="Ajalooline kontekst">
+
+                <div class="col-lg-6 text-center text-lg-end mt-5 mt-lg-0">
+                    <img src="https://www.apollo.ee/_next/image?url=https%3A%2F%2Fcdn.apollo.ee%2Fo%2Fapollo%2F6%2F5%2F7%2F5%2F6575b95c9b919556598b603136634e0c2a3ef445_0753772.jpg&w=256&q=75" 
+                         class="book-cover img-fluid" 
+                         alt="Lotte ja kuukivi saladused raamat">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="mou" class="bg-light py-5">
+    <!-- Raamatu kirjeldus -->
+    <section id="sisu" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold text-dark mb-4">Raamatu sisu?</h2>
+                    <p class="lead text-secondary mb-4">
+                        "LOTTE JA KUUKIVI SALADUS on juba kolmas lastele mõeldud raamat Lotte ja tema sõprade seiklustest. Raamat tõstab esile positiivseid väärtusi, nagu sõprus, oskus märgata enda kõrval teisi ja valmidus hättasattunuid abistada.
+Ühel ööl hiilivad Leiutajatekülla kaks tundmatut. Nad otsivad taga kolme kivi, mille vana rännukoer Klaus oma viimaselt rännakult kaasa tõi. Üks kivi jäi Klausile, kaks tema reisikaaslastele. Mõistes, et kivid peidavad endas saladust, lähevad Lotte ja Klaus ülejäänud kividele järele. Kui Klaus ootamatult haigestub, jätkab Lotte teekonda üksi. Peagi selgub, et kivide saladus on palju suurem kui Lotte ja Klaus arvata oskasid.
+Raamat on valminud Janno Põldma ja Heiki Ernitsa joonisfilmi Lotte ja kuukivi saladus ainetel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arvamused / Reviews -->
+    <section id="arvamused" class="py-5 bg-light">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <h2>Ajaloo dimensioonid</h2>
-                <p class="text-muted">Vali valdkond, et lugeda täpsemalt süsteemi mõjudest.</p>
+                <h2 class="display-5">Lugeja arvamused</h2>
+                <div class="accent-line mx-auto"></div>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card h-100 feature-card p-4">
-                        <div>
-                            <h3>Majanduslik pärand</h3>
-                            <p class="text-muted small">Uuri, kuidas puuvilla-, suhkru- ja tubakaistandused rikastasid Euroopat ja Ameerikat.</p>
-                        </div>
-                        <a href="https://et.wikipedia.org/wiki/Orjus" target="_blank" class="btn btn-sm btn-outline-dark mt-3 rounded-0">Loe lähemalt</a>
+                    <div class="testimonial-card card h-100 p-4 shadow-sm">
+                        <p class="fst-italic">"Minu lapsele väga meeldis, kui ma talle seda lugesin."</p>
+                        <strong>— Mari Sügis</strong>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 feature-card p-4">
-                        <div>
-                            <h3>Vastupanuaktid</h3>
-                            <p class="text-muted small">Loe kangelastest, kes riskisid kõigele, et saavutada vabadus endale ja teistele.</p>
-                        </div>
-                        <a href="#" class="btn btn-sm btn-outline-dark mt-3 rounded-0">Loe lähemalt</a>
+                    <div class="testimonial-card card h-100 p-4 shadow-sm">
+                        <p class="fst-italic">"Ostsin raamatu oma lapselapsele, kellele väga meeldib lugeda ja peale seda ta teistest raamatutest ei olegi rääkinud."</p>
+                        <strong>— Tiiu Sukk</strong>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 feature-card p-4">
-                        <div>
-                            <h3>Kultuuriline säilimine</h3>
-                            <p class="text-muted small">Kuidas muusika, toit ja traditsioonid elasid üle kõige pimedamad ajad.</p>
-                        </div>
-                        <a href="#" class="btn btn-sm btn-outline-dark mt-3 rounded-0">Loe lähemalt</a>
+                    <div class="testimonial-card card h-100 p-4 shadow-sm">
+                        <p class="fst-italic">"Lapse lemmik raamat"</p>
+                        <strong>— Silvia Kool</strong>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="kaotamine" class="py-5">
+    <!-- Hinnapaketid -->
+    <section id="paketid" class="py-5 bg-white">
         <div class="container py-5">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="display-5">Pikk tee vabaduseni</h2>
-                    <div class="accent-line mx-auto"></div>
-                    <div class="col-md-8 mx-auto">
-                        <p class="lead">Orjuse kaotamine ei toimunud üleöö. See oli veriste mässude, poliitiliste debattide ja väsimatu selgitustöö tulemus.</p>
-                        <p>Alates 1807. aasta orjakaubanduse keelustamisest Briti impeeriumis kuni 13. paranduseni USA põhiseaduses – iga samm oli võitlus inimväärikuse eest.</p>
+            <div class="text-center mb-5">
+                <h2 class="display-5">Vali oma pakett</h2>
+                <div class="accent-line mx-auto"></div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card h-100 text-center">
+                        <div class="card-body p-5">
+                            <h5>DIGITAALNE</h5>
+                            <h2 class="display-5 fw-bold my-3">€19.99</h2>
+                            <hr>
+                            <ul class="list-unstyled my-4">
+                                <li class="mb-3">✓ E-raamat (PDF + EPUB)</li>
+                                <li class="mb-3">✓ Kohe kättesaadav</li>
+                            </ul>
+                            <a href="#" class="btn w-100 py-3" style="color: #ff69b4; border: 2px solid #ff69b4;">Osta</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card popular h-100 position-relative text-center">
+                        <span class="popular-badge">Kõige populaarsem</span>
+                        <div class="card-body p-5">
+                            <h5 style=\"color: #ff69b4;\">KOMPLEKT</h5>
+                            <h2 class=\"display-5 fw-bold my-3\" style=\"color: #ff69b4;\">€31.95</h2>
+                            <hr>
+                            <ul class="list-unstyled my-4">
+                                <li class="mb-3">✓ Paberraamat</li>
+                                <li class="mb-3">✓ E-raamat</li>
+                                <li class="mb-3">✓ Lisamaterjalid</li>
+                            </ul>
+                            <a href="https://www.apollo.ee/et/lotte-ja-kuukivi-saladus.html" 
+                               target="_blank" class="btn w-100 py-3" style="background-color: #ff69b4; color: white; border: none;">Osta komplekt</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card h-100 text-center">
+                        <div class="card-body p-5">
+                            <h5>PABERRAAMAT</h5>
+                            <h2 class="display-5 fw-bold my-3">€32.99</h2>
+                            <hr>
+                            <ul class="list-unstyled my-4">
+                                <li class="mb-3">✓ Füüsiline raamat</li>
+                            </ul>
+                            <a href="https://rahvaraamat.ee/et/raamatud/lasteraamatud/nooremale-koolieale-vanus-7-9/lotte-ja-kuukivi-saladus/415194" 
+                               target="_blank" class="btn w-100 py-3" style="color: #ff69b4; border: 2px solid #ff69b4;">Osta paberraamat</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tanapeav" class="py-5 text-white" style="background-color: #2c3e50;">
-        <div class="container py-5 text-center">
-            <h2 class="mb-4">Tänapäeva väljakutsed</h2>
-            <p class="mb-4 fs-5">Hinnanguliselt elab täna kaasaegses orjuses (inimkaubandus, sunnitöö) üle 40 miljoni inimese.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="https://www.antislavery.org" target="_blank" class="btn btn-danger btn-lg rounded-0 px-5">Toeta võitlust</a>
-                <a href="#navbarNav" class="btn btn-outline-light btn-lg rounded-0 px-5">Tagasi üles</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container text-center">
-            <h5 class="text-white mb-3">AJALOO ARHIIV</h5>
-            <p>© 2026 Hariduslik Ressurss. Dokumenteerides ajalugu, kaitstes tulevikku.</p>
+    <footer class="bg-dark text-white py-5 text-center">
+        <div class="container">
+            <p>Ceily• juhhu • 2026</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
